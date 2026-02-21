@@ -70,7 +70,13 @@ print("\nEnter 30 feature values separated by comma:")
 user_input = input()
 
 # Convert string input into float list
-input_data = list(map(float, user_input.split(",")))
+
+if "," in user_input:
+    input_data = list(map(float, user_input.split(",")))
+else:
+    input_data = list(map(float, user_input.split()))
+
+
 
 if len(input_data) != 30:
     print("Error: You must enter exactly 30 values.")
